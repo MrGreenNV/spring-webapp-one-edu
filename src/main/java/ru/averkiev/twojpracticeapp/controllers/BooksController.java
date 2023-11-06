@@ -16,7 +16,7 @@ import java.util.List;
  * @author mrGreenNV
  */
 @RestController
-@RequestMapping("/api/v1/authors")
+@RequestMapping("/api/v1/books")
 public class BooksController {
 
     /** Сервис для взаимодействия с сущностями {@link Book}. */
@@ -61,7 +61,9 @@ public class BooksController {
      */
     @PostMapping
     public void saveBook(@RequestBody BookDTO bookDTO) {
-        bookService.saveBook(modelMapper.map(bookDTO, Book.class));
+        Book book = modelMapper.map(bookDTO, Book.class);
+        book.setID();
+        bookService.saveBook(book);
     }
     /**
      * API-endpoint для обновления книги.

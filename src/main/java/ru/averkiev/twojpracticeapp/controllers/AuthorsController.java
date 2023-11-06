@@ -62,7 +62,9 @@ public class AuthorsController {
      */
     @PostMapping
     public void saveAuthor(@RequestBody AuthorDTO authorDTO) {
-        authorService.saveAuthor(modelMapper.map(authorDTO, Author.class));
+        Author author = modelMapper.map(authorDTO, Author.class);
+        author.setID();
+        authorService.saveAuthor(author);
     }
 
     /**

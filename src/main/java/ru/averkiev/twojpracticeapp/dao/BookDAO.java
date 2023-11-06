@@ -3,6 +3,7 @@ package ru.averkiev.twojpracticeapp.dao;
 import org.springframework.stereotype.Component;
 import ru.averkiev.twojpracticeapp.models.Book;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
 public class BookDAO {
 
     /** Список для хранения книг. */
-    private List<Book> books;
+    private final List<Book> books = new ArrayList<>();
 
     /**
      * Позволяет получить список всех книг.

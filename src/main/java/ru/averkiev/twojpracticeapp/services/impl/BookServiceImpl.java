@@ -71,7 +71,7 @@ public class BookServiceImpl implements BookService {
      */
     @Override
     public void updateBook(int bookID, Book updatedBook) {
-
+        bookDAO.updateBook(bookID, updatedBook);
     }
 
     /**
@@ -80,6 +80,6 @@ public class BookServiceImpl implements BookService {
      */
     @Override
     public void deleteBookByID(int bookID) {
-
+        bookDAO.deleteBook(bookID);
     }
 }

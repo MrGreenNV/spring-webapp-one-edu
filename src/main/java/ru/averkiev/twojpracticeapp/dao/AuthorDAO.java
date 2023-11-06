@@ -43,6 +43,7 @@ public class AuthorDAO {
      * @param author Сохраняемый объект {@link Author}.
      */
     public void saveAuthor(Author author) {
+        System.out.println(author.getAuthorName());
         authors.add(author);
     }
 
