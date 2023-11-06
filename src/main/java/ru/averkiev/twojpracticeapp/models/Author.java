@@ -9,16 +9,16 @@ import java.time.LocalDate;
 public class Author {
 
     /** Счетчик авторов. */
-    private static int authorCount = 0;
+    private static int AUTHORS_COUNT = 0;
 
     /** Идентификатор автора книги. */
     private int authorId;
 
     /** Имя автора книги. */
-    private final String authorName;
+    private String authorName;
 
     /** Дата рождения автора книги. */
-    private final LocalDate dateOfBirth;
+    private LocalDate dateOfBirth;
 
     /**
      * Создает автора книги с заданными параметрами.
@@ -27,7 +27,7 @@ public class Author {
      * @param dateOfBirth Дата рождения автора книги.
      */
     public Author(String authorName, LocalDate dateOfBirth) {
-        this.authorId = ++authorCount;
+        this.authorId = ++AUTHORS_COUNT;
         this.authorName = authorName;
         this.dateOfBirth = dateOfBirth;
     }
@@ -52,9 +52,18 @@ public class Author {
      * Геттер для имени автора.
      * @return Строку, содержащую имя автора книги.
      */
-    private String getAuthorName() {
+    public String getAuthorName() {
         return this.authorName;
     }
+
+    /**
+     * Сеттер для имени автора.
+     * @param newAuthorName Новое имя автора.
+     */
+    public void setAuthorName(String newAuthorName) {
+        this.authorName = authorName;
+    }
+
 
     /**
      * Геттер для даты рождения автора.
@@ -62,5 +71,13 @@ public class Author {
      */
     public LocalDate getDateOfBirth() {
         return this.dateOfBirth;
+    }
+
+    /**
+     * Сеттер для даты рождения автора.
+     * @param newDateOfBirth Новая дата рождения автора.
+     */
+    public void setDateOfBirth(LocalDate newDateOfBirth) {
+        this.dateOfBirth = newDateOfBirth;
     }
 }

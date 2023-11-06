@@ -9,16 +9,16 @@ import java.time.LocalDate;
 public class Book {
 
     /** Счетчик книг. */
-    private static int bookCount = 0;
+    private static int BOOKS_COUNT = 0;
 
     /** Идентификатор книги. */
     private int bookId;
 
     /** Название книги. */
-    private final String bookName;
+    private String bookName;
 
     /** Дата издания книги. */
-    private final LocalDate dateOfPublish;
+    private LocalDate dateOfPublish;
 
     /** Автор книги. */
     Author author;
@@ -31,7 +31,7 @@ public class Book {
      * @param author Автор книги.
      */
     public Book(String bookName, LocalDate dateOfPublish, Author author) {
-        this.bookId = ++bookCount;
+        this.bookId = ++BOOKS_COUNT;
         this.bookName = bookName;
         this.dateOfPublish = dateOfPublish;
         this.author = author;
@@ -62,6 +62,14 @@ public class Book {
     }
 
     /**
+     * Сеттер для названия книги.
+     * @param newBookName Новое название книги.
+     */
+    public void setBookName(String newBookName) {
+        this.bookName = newBookName;
+    }
+
+    /**
      * Геттер для даты издания книги.
      * @return LocalDate, содержащий дату издания книги.
      */
@@ -70,10 +78,26 @@ public class Book {
     }
 
     /**
+     * Сеттер для даты публикации книги.
+     * @param newDateOfPublish Новая дата публикации книги.
+     */
+    public void setDateOfPublish(LocalDate newDateOfPublish) {
+        this.dateOfPublish = newDateOfPublish;
+    }
+
+    /**
      * Геттер для автора книги.
      * @return {@link Author}, представляющий автора книги.
      */
     public Author getAuthor() {
         return this.author;
+    }
+
+    /**
+     * Сеттер для автора книги.
+     * @param newAuthor Новый автор книги.
+     */
+    public void setAuthor(Author newAuthor) {
+        this.author = newAuthor;
     }
 }
