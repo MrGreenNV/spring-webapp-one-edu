@@ -3,6 +3,7 @@ package ru.averkiev.twojpracticeapp.dao;
 import org.springframework.stereotype.Component;
 import ru.averkiev.twojpracticeapp.models.Author;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
 public class AuthorDAO {
 
     /** Список для хранения авторов книг. */
-    private List<Author> authors;
+    private final List<Author> authors = new ArrayList<>();
 
     /**
      * Позволяет получить список авторов.

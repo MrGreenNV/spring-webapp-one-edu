@@ -15,6 +15,8 @@ public interface AuthorService {
 
     AuthorViewModel getAuthorByID(int authorID);
 
+    void saveAuthor(Author author);
+
     void updateAuthor(int authorID, Author updatedAuthor);
 
     void deleteAuthorByID(int authorID);

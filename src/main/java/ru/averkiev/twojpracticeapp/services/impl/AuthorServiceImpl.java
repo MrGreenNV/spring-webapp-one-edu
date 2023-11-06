@@ -56,6 +56,15 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     /**
+     * Сохранение автора.
+     * @param author Сохраняемый объект {@link Author}
+     */
+    @Override
+    public void saveAuthor(Author author) {
+        authorDAO.saveAuthor(author);
+    }
+
+    /**
      * Обновление информации об авторе.
      * @param authorID Идентификатор обновляемого автора.
      * @param updatedAuthor Объект {@link Author} с обновленными данными.
