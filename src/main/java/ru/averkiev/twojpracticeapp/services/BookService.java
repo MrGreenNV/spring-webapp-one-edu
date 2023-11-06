@@ -15,6 +15,8 @@ public interface BookService {
 
     BookViewModel getBookByID(int bookID);
 
+    void saveBook(Book book);
+
     void updateBook(int bookID, Book updatedBook);
 
     void deleteBookByID(int bookID);

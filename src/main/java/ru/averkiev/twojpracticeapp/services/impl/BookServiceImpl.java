@@ -56,6 +56,15 @@ public class BookServiceImpl implements BookService {
     }
 
     /**
+     * Сохранение книги в списке.
+     * @param book Сохраняемый объект {@link Book}
+     */
+    @Override
+    public void saveBook(Book book) {
+        bookDAO.saveBook(book);
+    }
+
+    /**
      * Обновление информации о книге.
      * @param bookID Идентификатор книги.
      * @param updatedBook Объект {@link Book} с обновленными данными.
